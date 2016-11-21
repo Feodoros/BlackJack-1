@@ -18,5 +18,9 @@ public class Card {
         return value + " of " + suit;
 
     }
+
+    public int getScore() {
+        return this.value.score;
+    }
 }
 
