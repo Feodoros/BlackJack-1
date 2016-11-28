@@ -8,7 +8,7 @@ public class Main {
     public static void main(String[] args) {
 
         List<Player> players = new LinkedList<>();
-        players.add(new Computer("компуктер1", new LimitIntellect(19)));
+        players.add(new Computer(, new LimitIntellect(19)));
         players.add(new Computer("компуктер2", new LimitIntellect(16)));
         players.add(new Human("Pidor"));
         Dealer dealer = new Dealer("Dealer");
@@ -23,6 +23,7 @@ public class Main {
         }
         for (Player player: players){
             while (true) {
+                System.out.println(player.name);
                 System.out.println(player.hand.getScore()
                         +": "+
                         player.hand);

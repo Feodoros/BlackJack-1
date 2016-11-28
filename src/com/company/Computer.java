@@ -4,7 +4,10 @@ package com.company;
  * Created by student1 on 14.11.16.
  */
 public class Computer extends Player {
-    public Computer(String name, Intellect intellect) {
-        super(intellect, name);
+    static String[] names = {"Снежана)","Ондрей","Ортем","Дониил","Некита"};
+    public Computer(Intellect intellect) {
+        super(intellect, "");
+        String name = names[(int)(Math.random()*names.length)];
+        this.name=name;
     }
 }
