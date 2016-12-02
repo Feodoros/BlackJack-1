@@ -3,7 +3,7 @@ package com.company;
 /**
  * Created by student1 on 14.11.16.
  */
-public abstract class Player  {
+public abstract class Player {
     public Hand hand = new Hand();
     private Intellect intellect;
     String name;
@@ -21,9 +21,8 @@ public abstract class Player  {
 
     public Command decision() {
         int score = hand.getScore();
-        if (score>21)
+        if (score > 21)
             return Command.STAND;
-        return intellect.decide(score);
-
-    }
+            return intellect.decide(score);
+        }
 }

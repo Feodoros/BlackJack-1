@@ -8,9 +8,9 @@ public class Main {
     public static void main(String[] args) {
 
         List<Player> players = new LinkedList<>();
-        players.add(new Computer(, new LimitIntellect(19)));
-        players.add(new Computer("компуктер2", new LimitIntellect(16)));
-        players.add(new Human("Pidor"));
+        players.add(new Computer(new LimitIntellect(19)));
+        players.add(new Computer (new LimitIntellect(16)));
+        players.add(new Human("Я"));
         Dealer dealer = new Dealer("Dealer");
         players.add(dealer);
 
@@ -21,8 +21,10 @@ public class Main {
             System.out.println(player.hand);
 
         }
+
         for (Player player: players){
             while (true) {
+                System.out.println();
                 System.out.println(player.name);
                 System.out.println(player.hand.getScore()
                         +": "+
@@ -33,7 +35,16 @@ public class Main {
                 if (command==Command.HIT)
                     dealer.deal(player);
 
+                if (player.hand.getScore() > 21) {
+                    System.out.println(player.name + "Проиграл лол))");
+                }
+                if (dealer.hand.getScore() > 21) {
+                    System.out.println(dealer.name + "Проиграл лол))");;
+                }
+                if (dealer.hand.getScore() > player.hand.getScore() && dealer.hand.getScore() < 21){
+                    System.out.println(dealer.name + " Проиграл лол))");
+                }
             }
-        }
+      }
     }
 }
